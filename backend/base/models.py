@@ -22,7 +22,7 @@ class Session(models.Model):
     start = models.DateTimeField()
     end = models.DateTimeField()
     description = models.TextField(default='add description')
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):

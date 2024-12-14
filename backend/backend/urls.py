@@ -26,4 +26,5 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api-auth/', include('rest_framework.urls')),
     path('api/sessions/', views.getSessions, name='sessions'),
+    path('api/session/<str:pk>/', views.getSession, name='session'),
 ]

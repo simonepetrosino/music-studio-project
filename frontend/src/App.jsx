@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import {AuthProvider} from './context/AuthContext'
+import SessionDetail from './components/SessionDetail'
 
 
 function App() {
@@ -19,6 +20,14 @@ function App() {
                 element={
                   <ProtectedRoute> {/*we are going to wrap the Home component with the ProtectedRoute component*/}
                     <HomePage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/sessionDetail/:id" 
+                element={
+                  <ProtectedRoute>
+                    <SessionDetail />
                   </ProtectedRoute>
                 } 
               />

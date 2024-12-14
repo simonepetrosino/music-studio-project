@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 import Header from "../components/Header";
 import {AuthContext} from '../context/AuthContext';
 import useAxios from "../utils/useAxios";
+import MyCalendar from "../components/MyCalendar";
 
 const HomePage = () => {
     let [sessions, setSessions] = useState([]);
@@ -31,6 +32,9 @@ const HomePage = () => {
                     <li key={session.id}>{session.artist_name} session with {session.producer_name}</li>
                 ))}
             </ul>
+
+            <MyCalendar myEvents={sessions}/>
+
         </div>
     );
 };

@@ -34,3 +34,10 @@ def getSessions(request):
         session = user.produced_sessions.all()
     serializer = SessionSerializer(session, many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def getSession(request, pk):
+    session = Session.objects.get(id=pk)
+    serializer = SessionSerializer(session, many=False)
+    return Response(serializer.data)
