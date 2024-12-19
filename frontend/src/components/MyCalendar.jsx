@@ -4,8 +4,27 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import listPlugin from '@fullcalendar/list'
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import useAxios from "../utils/useAxios";
+
 
 const MyCalendar = ({myEvents}) => {
+
+    const [sessions, setSessions] = useState([]);
+
+    let api = useAxios();
+
+    useEffect(() => {
+        getSessions();
+    }, []);
+
+    let getSessions = async () => {
+        let response = await api.get("/api/sessions/");
+        
+        if(response.status === 200){
+            setSessions(response.data);
+        }
+    };
 
     const navigate = useNavigate();
 
@@ -14,10 +33,10 @@ const MyCalendar = ({myEvents}) => {
     };
 
     return (
-        <FullCalendar
+        <FullCalendar 
             plugins={[ dayGridPlugin , timeGridPlugin, listPlugin ]}
             initialView="dayGridMonth"
-            events = {myEvents.map(event => ({
+            events = {sessions.map(event => ({
                 id: event.id,
                 title: `${event.artist_name} session with ${event.producer_name}`,
                 start: event.start,

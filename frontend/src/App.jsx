@@ -6,6 +6,8 @@ import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import {AuthProvider} from './context/AuthContext'
 import SessionDetail from './components/SessionDetail'
+import CalendarPage from './pages/CalendarPage'
+import SessionPage from './pages/SessionPage'
 
 
 function App() {
@@ -24,10 +26,26 @@ function App() {
                 } 
               />
               <Route 
+                path="/sessions" 
+                element={
+                  <ProtectedRoute>
+                    <SessionPage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
                 path="/sessionDetail/:id" 
                 element={
                   <ProtectedRoute>
                     <SessionDetail />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/calendar" 
+                element={
+                  <ProtectedRoute>
+                    <CalendarPage />
                   </ProtectedRoute>
                 } 
               />
