@@ -8,6 +8,7 @@ import {AuthProvider} from './context/AuthContext'
 import SessionDetail from './components/SessionDetail'
 import CalendarPage from './pages/CalendarPage'
 import SessionPage from './pages/SessionPage'
+import AudioFilesPage from './pages/AudioFilesPage'
 
 
 function App() {
@@ -46,6 +47,14 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <CalendarPage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/audio-files" 
+                element={
+                  <ProtectedRoute>
+                    <AudioFilesPage />
                   </ProtectedRoute>
                 } 
               />
