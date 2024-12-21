@@ -27,4 +27,6 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('api/sessions/', views.getSessions, name='sessions'),
     path('api/session/<str:pk>/', views.getSession, name='session'),
+    path('api/session/<str:pk>/status/', views.update_session_status, name='update_session_status'),
+    path('api/audio_files/', views.getAudioFiles, name='audio_files'),
 ]
