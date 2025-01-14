@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Session, AudioFile
+from .models import Session, AudioFile, User
 from rest_framework import serializers
 
 class SessionSerializer(ModelSerializer):
@@ -16,3 +16,15 @@ class AudioFileSerializer(ModelSerializer):
     class Meta:
         model = AudioFile
         fields = 'artist', 'producer', 'file', 'status', 'artist_name', 'producer_name', 'id', 'title'
+
+class UserRegistrationSerializer(ModelSerializer):
+    password = serializers.CharField(write_only=True)
+    class Meta:
+        model = User
+        fields = 'username', 'password'
+
+    def create(self, validated_data):
+        user = User(username = validated_data['username'])
+        user.set_password(validated_data['password'])
+        user.save()
+        return user

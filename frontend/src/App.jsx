@@ -9,6 +9,7 @@ import SessionDetail from './components/SessionDetail'
 import CalendarPage from './pages/CalendarPage'
 import SessionPage from './pages/SessionPage'
 import AudioFilesPage from './pages/AudioFilesPage'
+import RegisterPage from './pages/RegisterPage'
 
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
                 } 
               />
               <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
             </Routes>
           </AuthProvider>
         </BrowserRouter>

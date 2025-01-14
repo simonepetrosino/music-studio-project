@@ -1,33 +1,27 @@
-import React, {useContext, useEffect, useState} from "react";
-import Header from "../components/Header";
-import {AuthContext} from '../context/AuthContext';
-import useAxios from "../utils/useAxios";
-import SessionPage from "./SessionPage";
-import { Container } from "react-bootstrap";
-import { Card, Button } from "react-bootstrap";
-import Footer from "../components/Footer";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useEffect, useState } from 'react';
+import { Card, Button, Container, Row, Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
+import useAxios from '../utils/useAxios';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const HomePage = () => {
-    let [sessions, setSessions] = useState([]);
-    let {authTokens, logoutUser} = useContext(AuthContext);
-    let { user } = useContext(AuthContext);
+    const [sessions, setSessions] = useState([]);
+    const { user } = useContext(AuthContext);
+    const api = useAxios();
     const navigate = useNavigate();
-
-    let api = useAxios();
 
     useEffect(() => {
         getSessions();
     }, []);
 
-    let getSessions = async () => {
+    const getSessions = async () => {
         let response = await api.get("/api/sessions/");
-        
-        if(response.status === 200){
+        if (response.status === 200) {
             setSessions(response.data);
         }
     };
-
 
     const handleUploadFiles = () => {
         navigate('/upload');
@@ -35,65 +29,75 @@ const HomePage = () => {
 
     const handleBookSession = () => {
         navigate('/book');
-    }
+    };
 
     const handleViewFiles = () => {
         navigate('/audio-files');
-    }
+    };
+
+    const handleViewSessions = () => {
+        navigate('/sessions');
+    };
 
     return (
-            <div>
-                <Header />
-                <Container fluid className="main-container bg-dark text-white" style={{ padding: 0 }}>
-                    <h1>Hi, {user && user.username}</h1>
-
-                    <Container className="d-flex justify-content-center">
-
-                        {user && user.role === 'artist' && (
-                        <Card style={{ width: '18rem' }} className="mx-auto" bg="secondary">
-                            <Card.Img variant="top" src="holder.js/100px180" />
-                            <Card.Body>
-                                <Card.Title>Book your session</Card.Title>
-                                <Card.Text>
-                                    You can book your session with one of our producers here.
-                                </Card.Text>
-                                <Button variant="dark" onClick={handleBookSession}>Book a session</Button>
-                            </Card.Body>
-                        </Card>
-                        )}
-
-                        <Card style={{ width: '18rem' }} className="mx-auto" bg="secondary">
-                            <Card.Img variant="top" src="holder.js/100px180" />
-                            <Card.Body>
+        <div>
+            <Header />
+            <Container fluid className="main-container bg-dark text-white p-3">
+                <h1>Hi, {user && user.username}</h1>
+                <Row className="justify-content-center">
+                    {user && user.role === 'artist' && (
+                        <Col xs={12} sm={6} md={4} lg={3} className="mb-3 d-flex">
+                            <Card className="bg-secondary text-white p-3 flex-fill">
+                                <Card.Body className="d-flex flex-column">
+                                    <Card.Title>Book your session</Card.Title>
+                                    <Card.Text className="flex-grow-1">
+                                        You can book your session with one of our producers here.
+                                    </Card.Text>
+                                    <Button variant="dark" onClick={handleBookSession}>Book a session now</Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    )}
+                    <Col xs={12} sm={6} md={4} lg={3} className="mb-3 d-flex">
+                        <Card className="bg-secondary text-white p-3 flex-fill">
+                            <Card.Body className="d-flex flex-column">
                                 <Card.Title>View your files</Card.Title>
-                                <Card.Text>
+                                <Card.Text className="flex-grow-1">
                                     You can view all your songs and beats here.
                                 </Card.Text>
                                 <Button variant="dark" onClick={handleViewFiles}>Show files</Button>
                             </Card.Body>
                         </Card>
-
-                        {user && user.role === 'producer' && (
-                        <Card style={{ width: '18rem' }} className="mx-auto bg-secondary">
-                            <Card.Img variant="top" src="holder.js/100px180" />
-                            <Card.Body>
-                                <Card.Title>Upload Audio Files</Card.Title>
-                                <Card.Text>
-                                    You can upload your audio files here.
+                    </Col>
+                    <Col xs={12} sm={6} md={4} lg={3} className="mb-3 d-flex">
+                        <Card className="bg-secondary text-white p-3 flex-fill">
+                            <Card.Body className="d-flex flex-column">
+                                <Card.Title>View your sessions</Card.Title>
+                                <Card.Text className="flex-grow-1">
+                                    You can view all your sessions here.
                                 </Card.Text>
-                                <Button variant="dark" onClick={handleUploadFiles}>Upload Files</Button>
+                                <Button variant="dark" onClick={handleViewSessions}>View sessions</Button>
                             </Card.Body>
                         </Card>
+                    </Col>
+                    {user && user.role === 'producer' && (
+                        <Col xs={12} sm={6} md={4} lg={3} className="mb-3 d-flex">
+                            <Card className="bg-secondary text-white p-3 flex-fill">
+                                <Card.Body className="d-flex flex-column">
+                                    <Card.Title>Upload Audio Files</Card.Title>
+                                    <Card.Text className="flex-grow-1">
+                                        You can upload your audio files here.
+                                    </Card.Text>
+                                    <Button variant="dark" onClick={handleUploadFiles}>Upload Files</Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
                     )}
-
-                    </Container>
-
-                    <Footer />
-
-                </Container>
-
-            </div>
+                </Row>
+            </Container>
+            <Footer />
+        </div>
     );
-};
+}
 
 export default HomePage;
