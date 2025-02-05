@@ -81,7 +81,11 @@ const AudioFilesPage = () => {
                                         <td>{file.producer_name}</td>
                                         <td>{file.artist_name}</td>
                                         <td>
-                                            <Button variant="dark" href={file.file} download>
+                                            <audio controls>
+                                                <source src={file.file} type="audio/mpeg" />
+                                                Your browser does not support the audio element.
+                                            </audio>
+                                            <Button variant="dark" href={file.file} download className="mt-2">
                                                 Download
                                             </Button>
                                         </td>
