@@ -32,7 +32,7 @@ class Session(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.artist} session with {self.producer}'
+        return f'{self.artist} session with {self.producer} at {self.start}'
     
     
 class AudioFile(models.Model):

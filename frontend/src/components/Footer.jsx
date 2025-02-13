@@ -40,7 +40,7 @@ const Footer = () => {
             <h5>Contatti</h5>
             <p>Email: info@offbeatzstudio.com</p>
             <p>Telefono: +39 123 456 7890</p>
-            <p>Indirizzo: Via Roma 123, 00100 Roma, Italia</p>
+            <p>Indirizzo: Via Roma 123, 00100 Firenze, Italia</p>
           </Col>
         </Row>
         <Row>

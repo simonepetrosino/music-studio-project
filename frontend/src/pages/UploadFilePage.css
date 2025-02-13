@@ -1,0 +1,66 @@
+.upload-file-page {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('src/assets/recording-studio-esempio.jpg') no-repeat center center fixed;
+    background-size: cover; 
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-file-container {
+    margin-top: 50px;
+    max-width: 600px;
+    background-color: #343a40;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-file-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.upload-file-container .form-control {
+    background-color: #495057;
+    border: none;
+    color: white;
+}
+
+.upload-file-container .form-control:focus {
+    background-color: #495057;
+    color: white;
+    box-shadow: none;
+}
+
+.upload-file-container .btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.upload-file-container .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.upload-file-container .dropdown-menu {
+    background-color: #495057;
+    border: none;
+    color: white;
+    width: 100%;
+    max-width: 100%;
+    position: absolute; /* Ensure it aligns with the input field */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.upload-file-container .dropdown-item {
+    background-color: #495057;
+    color: white;
+}
+
+.upload-file-container .dropdown-item:hover {
+    background-color: #343a40;
+    color: white;
+}

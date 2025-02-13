@@ -5,7 +5,7 @@ import { AuthContext } from '../context/AuthContext';
 import useAxios from '../utils/useAxios';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import './HomePage.css'; // Import the CSS file for styling
+import './HomePage.css';
 
 const HomePage = () => {
     const [sessions, setSessions] = useState([]);

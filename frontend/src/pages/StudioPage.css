@@ -1,0 +1,67 @@
+.studio-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url('src/assets/recording-studio-esempio.jpg') no-repeat center center fixed; 
+    background-size: cover; 
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto;
+}
+
+.studio-page-container {
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent; 
+    overflow-x: hidden;
+}
+
+.content-container {
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    margin-top: -30px;
+    max-width: 100%; 
+    box-sizing: border-box; 
+}
+
+.video-container {
+    flex: 0 0 30%;
+    margin-top: -20px;
+}
+
+.text-container {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.text-container h2 {
+    text-align: center;
+}
+
+.media-content {
+    position: relative;
+}
+
+.media-content .caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Ensure no horizontal scrolling */
+body, html {
+    overflow-x: hidden;
+}

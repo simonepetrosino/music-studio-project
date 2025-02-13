@@ -7,17 +7,26 @@
 .session-page-container {
     flex: 1;
     padding: 0;
-    margin: 0;
+    margin: -5% 0 0 0;
     width: 100%;
-    background: url('/src/assets/recording-studio-esempio.jpg') no-repeat center center fixed; /* Background image */
-    background-size: cover; /* Cover the entire container */
+    background: url('src/assets/recording-studio-esempio.jpg') no-repeat center center fixed;
+    background-size: cover; 
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 .table-background {
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for better readability */
+    background: rgba(0, 0, 0, 0.7); 
     padding: 20px;
     border-radius: 10px;
+}
+
+.text-success {
+    color: green !important;
+}
+
+.text-warning {
+    color: yellow !important;
 }

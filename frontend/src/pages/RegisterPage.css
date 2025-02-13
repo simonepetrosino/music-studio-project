@@ -10,9 +10,9 @@
     padding: 0;
     margin: 0;
     width: 100%;
-    background: url('/src/assets/recording-studio-esempio.jpg') no-repeat center center fixed; /* Background image */
-    background-size: cover; /* Cover the entire container */
-    padding-top: 60px; /* Add padding to account for the header */
+    background: url('/src/assets/recording-studio-esempio.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding-top: 60px;
 }
 
 .image-container-register {
@@ -21,7 +21,7 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+    background: rgba(0, 0, 0, 0.6);
     color: white;
 }
 
@@ -40,7 +40,17 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.8); /* Increase opacity for better readability */
+    background: rgba(0, 0, 0, 0.8);
     color: white;
-    border-radius: 10px; /* Add rounded corners */
+    border-radius: 10px; 
+}
+
+@media (max-width: 768px) {
+    .overlay-paragraph-register {
+        display: none; /* Hide the paragraph on small screens */
+    }
+
+    .register-page-container {
+        flex-direction: column; /* Stack text and form vertically */
+    }
 }

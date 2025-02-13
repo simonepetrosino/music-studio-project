@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
-import './LoginPage.css'; // Import the CSS file for styling
+import './LoginPage.css';
 import { AuthContext } from '../context/AuthContext';
 
 const LoginPage = () => {
@@ -26,11 +26,16 @@ const LoginPage = () => {
                     <div className="image-overlay">
                         <div className="overlay-text">
                             <h1>OffBeatz Studio</h1>
-                            <p>
+                            <p className="overlay-paragraph-login">
                                 OffBeatz è il tuo punto di riferimento per la registrazione e la produzione musicale a Firenze.
                                 <br /><br />
                                 Offriamo un ambiente professionale e attrezzature di alta qualità per garantire risultati eccezionali. Che tu sia un artista emergente o un professionista affermato, il nostro studio è progettato per soddisfare tutte le tue esigenze creative. Unisciti a noi per trasformare le tue idee in realtà sonore.
                             </p>
+                            <div className="text-center">
+                                <Button variant="primary" as={Link} to="/studio">
+                                    Visita il nostro Studio
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -10,6 +10,10 @@ import CalendarPage from './pages/CalendarPage'
 import SessionPage from './pages/SessionPage'
 import AudioFilesPage from './pages/AudioFilesPage'
 import RegisterPage from './pages/RegisterPage'
+import UploadFilePage from './pages/UploadFilePage'
+import UpdateFilePage from './pages/UpdateFilePage'
+import BookSessionPage from './pages/BookSessionPage'
+import StudioPage from './pages/StudioPage'
 
 
 function App() {
@@ -52,6 +56,30 @@ function App() {
                 } 
               />
               <Route 
+                  path="/upload" 
+                  element={
+                      <ProtectedRoute>
+                          <UploadFilePage />
+                      </ProtectedRoute>
+                  }
+              />
+              <Route
+                path="/update-file/:id"
+                element={
+                  <ProtectedRoute>
+                    <UpdateFilePage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/book"
+                element={
+                  <ProtectedRoute>
+                    <BookSessionPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route 
                 path="/audio-files" 
                 element={
                   <ProtectedRoute>
@@ -61,6 +89,7 @@ function App() {
               />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
+              <Route path='/studio' element={<StudioPage />} />
             </Routes>
           </AuthProvider>
         </BrowserRouter>

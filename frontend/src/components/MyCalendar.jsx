@@ -44,6 +44,7 @@ const MyCalendar = ({myEvents}) => {
             }))}
 
             eventClick={eventClickAction}
+            timeZone="Europe/Rome"
             
 
             headerToolbar={{
