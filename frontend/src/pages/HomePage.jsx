@@ -57,7 +57,7 @@ const HomePage = () => {
             <Header />
             <Container fluid className="main-container bg-dark text-white p-0">
                 <div className="image-container-home">
-                    <img src='/public/recording-studio-esempio.jpg' alt="Studio" className="img-fluid" />
+                    <img src='/recording-studio-esempio.jpg' alt="Studio" className="img-fluid" />
                     <div className="image-overlay-home">
                         <h1 className="overlay-text-home">OffBeatz Studio</h1>
                         <div className="overlay-paragraph-home" ref={paragraphRef}>
