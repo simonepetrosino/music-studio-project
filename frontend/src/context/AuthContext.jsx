@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
     const navigate = useNavigate();
 
     let registerUser = async (data) => {
-        let response = await fetch("http://127.0.0.1:8000/api/register/", {
+        let response = await fetch("https://music-studio-project-production.up.railway.app/api/register/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
 
     let loginUser = async (data) => {
         //e.preventDefault();
-        let response = await fetch("http://127.0.0.1:8000/api/token/", {
+        let response = await fetch("https://music-studio-project-production.up.railway.app/api/token/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
