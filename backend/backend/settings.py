@@ -198,3 +198,8 @@ CSRF_TRUSTED_ORIGINS = [
     "https://music-studio-project-production.up.railway.app",
     # Se hai un frontend su Vercel, aggiungilo qui
 ]
+
+import os
+if os.getenv("CREATE_SUPERUSER", "False") == "True":
+    from django.core.management import call_command
+    call_command("create_superuser")
