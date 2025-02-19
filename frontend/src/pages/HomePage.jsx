@@ -57,7 +57,7 @@ const HomePage = () => {
             <Header />
             <Container fluid className="main-container bg-dark text-white p-0">
                 <div className="image-container-home">
-                    <img src='/src/assets/recording-studio-esempio.jpg' alt="Studio" className="img-fluid" />
+                    <img src='/public/recording-studio-esempio.jpg' alt="Studio" className="img-fluid" />
                     <div className="image-overlay-home">
                         <h1 className="overlay-text-home">OffBeatz Studio</h1>
                         <div className="overlay-paragraph-home" ref={paragraphRef}>
@@ -76,7 +76,7 @@ const HomePage = () => {
                         {user && user.role === 'artist' && (
                             <Col xs={12} sm={6} md={4} lg={4} className="mb-3 d-flex">
                                 <Card className="bg-secondary text-white p-0 flex-fill">
-                                    <Card.Img variant="top" src="/src/assets/microfono.avif" alt="Mic" className="card-img-top-no-margin fixed-dimension" />
+                                    <Card.Img variant="top" src="/public/microfono.avif" alt="Mic" className="card-img-top-no-margin fixed-dimension" />
                                     <Card.Body className="d-flex flex-column">
                                         <Card.Title>Book your session</Card.Title>
                                         <Card.Text className="flex-grow-1">
@@ -89,7 +89,7 @@ const HomePage = () => {
                         )}
                         <Col xs={12} sm={6} md={4} lg={4} className="mb-3 d-flex">
                             <Card className="bg-secondary text-white p-0 flex-fill">
-                                <Card.Img variant="top" src="/src/assets/mpc.jpg" alt="mpc" className="card-img-top-no-margin fixed-dimension" />
+                                <Card.Img variant="top" src="/public/mpc.jpg" alt="mpc" className="card-img-top-no-margin fixed-dimension" />
                                 <Card.Body className="d-flex flex-column">
                                     <Card.Title>View your files</Card.Title>
                                     <Card.Text className="flex-grow-1">
@@ -101,7 +101,7 @@ const HomePage = () => {
                         </Col>
                         <Col xs={12} sm={6} md={4} lg={4} className="mb-3 d-flex">
                             <Card className="bg-secondary text-white p-0 flex-fill">
-                                <Card.Img variant="top" src="/src/assets/session.webp" alt="Your Image" className="card-img-top-no-margin fixed-dimension" />
+                                <Card.Img variant="top" src="/public/session.webp" alt="session" className="card-img-top-no-margin fixed-dimension" />
                                 <Card.Body className="d-flex flex-column">
                                     <Card.Title>View your sessions</Card.Title>
                                     <Card.Text className="flex-grow-1">
@@ -114,7 +114,7 @@ const HomePage = () => {
                         {user && user.role === 'producer' && (
                             <Col xs={12} sm={6} md={4} lg={4} className="mb-3 d-flex">
                                 <Card className="bg-secondary text-white p-0 flex-fill">
-                                    <Card.Img variant="top" src="/src/assets/mixer-upload.jpeg" alt="Your Image" className="card-img-top-no-margin fixed-dimension" />
+                                    <Card.Img variant="top" src="/public/mixer-upload.jpeg" alt="mixer" className="card-img-top-no-margin fixed-dimension" />
                                     <Card.Body className="d-flex flex-column">
                                         <Card.Title>Upload Audio Files</Card.Title>
                                         <Card.Text className="flex-grow-1">

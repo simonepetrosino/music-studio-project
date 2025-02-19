@@ -2,16 +2,16 @@ import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import micImage from '../assets/mic.jpg';
-import sg1Image from '../assets/sg1.jpg';
-import sg3Image from '../assets/sg3.jpg';
-import mpcImage from '../assets/mpc.jpg';
-import focalImage from '../assets/focal.jpg';
-import korgImage from '../assets/korg.jpg';
-import guitarsImage from '../assets/guitars.jpg';
-import apolloImage from '../assets/apollo.jpg';
-import focalKorgImage from '../assets/focal-e-korg.jpg';
-import offVideo from '../assets/off.mp4';
+import micImage from '../../public/mic.jpg';
+import sg1Image from '../../public/sg1.jpg';
+import sg3Image from '../../public/sg3.jpg';
+import mpcImage from '../../public/mpc.jpg';
+import focalImage from '../../public/focal.jpg';
+import korgImage from '../../public/korg.jpg';
+import guitarsImage from '../../public/guitars.jpg';
+import apolloImage from '../../public/apollo.jpg';
+import focalKorgImage from '../../public/focal-e-korg.jpg';
+import offVideo from '../../public/off.mp4';
 import './StudioPage.css';
 
 const StudioPage = () => {
