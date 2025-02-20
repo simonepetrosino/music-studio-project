@@ -189,12 +189,15 @@ AUTH_USER_MODEL = 'base.User'
 
 CORS_ALLOW_CREDENTIALS = True
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://music-studio-project.vercel.app",
+    "http://localhost:3000",
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CSRF_TRUSTED_ORIGINS = [
     "https://music-studio-project-production.up.railway.app",
-    "https://music-studio.vercel.app",
+    "https://music-studio-project.vercel.app",
 ]
