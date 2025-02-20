@@ -94,6 +94,15 @@ const SessionPage = () => {
         return sortConfig.key === key ? (sortConfig.direction === 'ascending' ? '▲' : '▼') : null;
     };
 
+    const handleChangeStatus = async (sessionId, newStatus) => {
+        try {
+            await api.put(`/api/session/${sessionId}/status/`, { status: newStatus });
+            getSessions();
+        } catch (error) {
+            console.error('There was an error updating the session status!', error);
+        }
+    };
+
     const handleDeleteSession = async (sessionId) => {
         const confirmDelete = window.confirm('Are you sure you want to delete this session?');
         if (confirmDelete) {
