@@ -6,7 +6,7 @@
 
 .session-page-container {
     flex: 1;
-    padding: 0;
+    padding: 20px;
     margin: -5% 0 0 0;
     width: 100%;
     background: url('/recording-studio-esempio.jpg') no-repeat center center fixed;
@@ -29,4 +29,11 @@
 
 .text-warning {
     color: yellow !important;
+}
+
+@media (max-width: 576px) {
+    .dropdown-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }

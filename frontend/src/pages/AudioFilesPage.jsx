@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Table, Button, Container, FormControl, InputGroup, DropdownButton, Dropdown } from 'react-bootstrap';
+import { Table, Button, Container, FormControl, InputGroup, DropdownButton, Dropdown, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAxios from '../utils/useAxios';
 import { AuthContext } from '../context/AuthContext';
@@ -136,33 +136,41 @@ const AudioFilesPage = () => {
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
                     </InputGroup>
-                    <div className="d-flex justify-content-between mb-3">
-                        <DropdownButton id="dropdown-basic-button" title={`Filter by Status: ${statusFilter || 'All'}`}>
-                            <Dropdown.Item onClick={() => setStatusFilter('')}>All</Dropdown.Item>
-                            {uniqueStatuses.map(status => (
-                                <Dropdown.Item key={status} onClick={() => setStatusFilter(status)}>
-                                    {status}
-                                </Dropdown.Item>
-                            ))}
-                        </DropdownButton>
-                        <DropdownButton id="dropdown-basic-button" title={`Filter by Producer: ${producerFilter || 'All'}`}>
-                            <Dropdown.Item onClick={() => setProducerFilter('')}>All</Dropdown.Item>
-                            {uniqueProducers.map(producer => (
-                                <Dropdown.Item key={producer} onClick={() => setProducerFilter(producer)}>
-                                    {producer}
-                                </Dropdown.Item>
-                            ))}
-                        </DropdownButton>
-                        <DropdownButton id="dropdown-basic-button" title={`Filter by Artist: ${artistFilter || 'All'}`}>
-                            <Dropdown.Item onClick={() => setArtistFilter('')}>All</Dropdown.Item>
-                            {uniqueArtists.map(artist => (
-                                <Dropdown.Item key={artist} onClick={() => setArtistFilter(artist)}>
-                                    {artist}
-                                </Dropdown.Item>
-                            ))}
-                        </DropdownButton>
-                        <Button variant="secondary" onClick={resetFilters}>Reset Filters</Button>
-                    </div>
+                    <Row className="d-flex justify-content-between mb-3">
+                        <Col xs={12} sm={4} md={3} className="mb-2 mb-sm-0">
+                            <DropdownButton id="dropdown-basic-button" title={`Filter by Status: ${statusFilter || 'All'}`}>
+                                <Dropdown.Item onClick={() => setStatusFilter('')}>All</Dropdown.Item>
+                                {uniqueStatuses.map(status => (
+                                    <Dropdown.Item key={status} onClick={() => setStatusFilter(status)}>
+                                        {status}
+                                    </Dropdown.Item>
+                                ))}
+                            </DropdownButton>
+                        </Col>
+                        <Col xs={12} sm={4} md={3} className="mb-2 mb-sm-0">
+                            <DropdownButton id="dropdown-basic-button" title={`Filter by Producer: ${producerFilter || 'All'}`}>
+                                <Dropdown.Item onClick={() => setProducerFilter('')}>All</Dropdown.Item>
+                                {uniqueProducers.map(producer => (
+                                    <Dropdown.Item key={producer} onClick={() => setProducerFilter(producer)}>
+                                        {producer}
+                                    </Dropdown.Item>
+                                ))}
+                            </DropdownButton>
+                        </Col>
+                        <Col xs={12} sm={4} md={3} className="mb-2 mb-sm-0">
+                            <DropdownButton id="dropdown-basic-button" title={`Filter by Artist: ${artistFilter || 'All'}`}>
+                                <Dropdown.Item onClick={() => setArtistFilter('')}>All</Dropdown.Item>
+                                {uniqueArtists.map(artist => (
+                                    <Dropdown.Item key={artist} onClick={() => setArtistFilter(artist)}>
+                                        {artist}
+                                    </Dropdown.Item>
+                                ))}
+                            </DropdownButton>
+                        </Col>
+                        <Col xs={12} sm={4} md={3}>
+                            <Button variant="secondary" onClick={resetFilters} className="w-100">Reset Filters</Button>
+                        </Col>
+                    </Row>
                     <div className="table-responsive table-background">
                         <Table striped bordered hover variant="dark">
                             <thead>
